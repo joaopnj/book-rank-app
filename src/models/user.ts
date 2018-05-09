@@ -3,7 +3,7 @@ export class User {
     isFirstAcess:   string;
     login:          string;
     nome:           string;
-    password:       string;
+    senha:          string;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);        

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { LoadingPage } from './loading';
+import { DecidePage } from './decide';
 
 @NgModule({
   declarations: [
-    LoadingPage,
+    DecidePage,
   ],
   imports: [
-    IonicPageModule.forChild(LoadingPage),
+    IonicPageModule.forChild(DecidePage),
   ],
 })
-export class LoadingPageModule {}
+export class DecidePageModule {}

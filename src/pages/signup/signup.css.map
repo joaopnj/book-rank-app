@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "loading.scss"
+        "signup.scss"
     ],
     "names": [],
-    "file": "loading.css"
+    "file": "signup.css"
 }

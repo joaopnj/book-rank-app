@@ -17,18 +17,13 @@ export class AuthServiceProvider {
               public httpClient: HttpClient) {
   }
 
-  login(user: User): Observable<User> {
-    return this.http.post(this.apiUrl+'/login', user, this.options)
-      .map(res => res.json());
-  }
-
   public register(user: User): Observable<User> {
     return this.http.post(this.apiUrl + '/usuario', user, this.options)
       .map(res => res.json());
   }
 
-  public createUser(user: User): Observable<User> {
-    return this.httpClient.post(this.apiUrl + '/usuario', user).map(response => {
+  public login(user: User): Observable<User> {
+    return this.httpClient.post(this.apiUrl + '/login', user).map(response => {
         return new User(response);
       }) .catch((error) => {
 
@@ -40,7 +35,17 @@ export class AuthServiceProvider {
       
       return Observable.throw(error.statusText);
       });
+  }
 
+  public createUser(user: User): Observable<User> {
+    return this.httpClient.post(this.apiUrl + '/usuario', user).map(response => {
+        return new User(response);
+      }) .catch((error) => {
+
+      error.status % 500 == 0 ? console.log(error.statusText) : "";    
+      
+      return Observable.throw(error.statusText);
+      });
   }
 
 

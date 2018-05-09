@@ -5,7 +5,6 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
-
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
@@ -13,6 +12,19 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
+
+ion-toast.success .toast-wrapper {
+	background: #9ACD32;
+}
+
+ion-toast.warning .toast-wrapper {
+	background: #FF8C00
+  ;
+}
+
+ion-toast.error .toast-wrapper {
+	background: rgb(209, 71, 71);
+}
 
 
 // Shared Variables

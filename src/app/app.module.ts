@@ -11,20 +11,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { FormsModule } from '@angular/forms';
 import { SignupPage } from '../pages/signup/signup';
-import { LoadingPage } from '../pages/loading/loading';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from  '@angular/common/http';
 import { LoadingProvider } from '../providers/loading/loading';
 import { AlertProvider } from '../providers/alert/alert';
+import { ToastProvider } from '../providers/toast/toast';
+import { DecidePage } from '../pages/decide/decide';
+import { FirstacessPage } from '../pages/firstacess/firstacess';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SignupPage,
-    LoadingPage,
-    ListPage
+    ListPage,
+    DecidePage,
+    FirstacessPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,9 @@ import { AlertProvider } from '../providers/alert/alert';
     MyApp,
     HomePage,
     SignupPage,
-    ListPage
+    ListPage,
+    DecidePage,
+    FirstacessPage
   ],
   providers: [
     StatusBar,
@@ -46,7 +51,8 @@ import { AlertProvider } from '../providers/alert/alert';
     AuthServiceProvider,
     LoadingProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AlertProvider
+    AlertProvider,
+    ToastProvider
   ]
 })
 export class AppModule {}

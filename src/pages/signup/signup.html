@@ -8,20 +8,24 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label floating>Digite um Login</ion-label>
+    <ion-label floating>Digite o nome</ion-label>
+    <ion-input type="text" [(ngModel)]="user.nome" name="login" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Digite o Login</ion-label>
     <ion-input type="text" [(ngModel)]="user.login" name="login" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label floating>Repita um Login</ion-label>
+    <ion-label floating>Repita o Login</ion-label>
     <ion-input type="text" [(ngModel)]="repeatedUsername" name="login" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label floating>Digite um password</ion-label>
-    <ion-input type="password" [(ngModel)]="user.password" name="login" required></ion-input>
+    <ion-label floating>Digite o password</ion-label>
+    <ion-input type="password" [(ngModel)]="user.senha" name="login" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label floating>Repita um password</ion-label>
-    <ion-input type="password" [(ngModel)]="repeatedPassword" name="login" (complete)="checkPassword()" required></ion-input>
+    <ion-label floating>Repita o password</ion-label>
+    <ion-input type="password" [(ngModel)]="repeatedPassword" name="login" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label floating>Papel</ion-label>
@@ -41,6 +45,11 @@
       <button ion-button block fixed color="light" (click)="goBackPage()">Voltar</button>
     </div>
   </div>
-  
-  
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-label class="center-text">Developed by João Jardim</ion-label>
+  </ion-toolbar>
+</ion-footer>
