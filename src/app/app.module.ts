@@ -18,7 +18,8 @@ import { LoadingProvider } from '../providers/loading/loading';
 import { AlertProvider } from '../providers/alert/alert';
 import { ToastProvider } from '../providers/toast/toast';
 import { DecidePage } from '../pages/decide/decide';
-import { FirstacessPage } from '../pages/firstacess/firstacess';
+import { AlunoFirstAcessPage } from '../pages/aluno-first-acess/aluno-first-acess';
+import { ProfessorFirstAcessPage } from '../pages/professor-first-acess/professor-first-acess';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FirstacessPage } from '../pages/firstacess/firstacess';
     SignupPage,
     ListPage,
     DecidePage,
-    FirstacessPage
+    AlunoFirstAcessPage,
+    ProfessorFirstAcessPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { FirstacessPage } from '../pages/firstacess/firstacess';
     SignupPage,
     ListPage,
     DecidePage,
-    FirstacessPage
+    AlunoFirstAcessPage,
+    ProfessorFirstAcessPage
   ],
   providers: [
     StatusBar,
