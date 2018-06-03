@@ -18,8 +18,9 @@ import { LoadingProvider } from '../providers/loading/loading';
 import { AlertProvider } from '../providers/alert/alert';
 import { ToastProvider } from '../providers/toast/toast';
 import { DecidePage } from '../pages/decide/decide';
-import { AlunoFirstAcessPage } from '../pages/aluno-first-acess/aluno-first-acess';
-import { ProfessorFirstAcessPage } from '../pages/professor-first-acess/professor-first-acess';
+import { FirstAcessPage} from '../pages/first-acess/first-acess'
+import { DisciplinaServiceProvider } from '../providers/disciplina-service/disciplina-service';
+import { LivroServiceProvider } from '../providers/livro-service/livro-service';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,7 @@ import { ProfessorFirstAcessPage } from '../pages/professor-first-acess/professo
     SignupPage,
     ListPage,
     DecidePage,
-    AlunoFirstAcessPage,
-    ProfessorFirstAcessPage
+    FirstAcessPage
   ],
   imports: [
     BrowserModule,
@@ -45,8 +45,7 @@ import { ProfessorFirstAcessPage } from '../pages/professor-first-acess/professo
     SignupPage,
     ListPage,
     DecidePage,
-    AlunoFirstAcessPage,
-    ProfessorFirstAcessPage
+    FirstAcessPage
   ],
   providers: [
     StatusBar,
@@ -55,7 +54,9 @@ import { ProfessorFirstAcessPage } from '../pages/professor-first-acess/professo
     LoadingProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AlertProvider,
-    ToastProvider
+    ToastProvider,
+    DisciplinaServiceProvider,
+    LivroServiceProvider
   ]
 })
 export class AppModule {}

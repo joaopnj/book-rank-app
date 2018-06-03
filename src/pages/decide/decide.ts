@@ -3,9 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { User } from '../../models/user';
 import { LoadingProvider } from '../../providers/loading/loading';
-import { AlertProvider } from '../../providers/alert/alert';
-import { ProfessorFirstAcessPage } from '../professor-first-acess/professor-first-acess';
-import { AlunoFirstAcessPage } from '../aluno-first-acess/aluno-first-acess';
+import { AlertProvider } from '../../providers/alert/alert';  
+import { ListPage } from '../list/list';
+import { FirstAcessPage } from '../first-acess/first-acess';
 
 @IonicPage()
 @Component({
@@ -34,15 +34,8 @@ export class DecidePage implements OnInit {
 
   verifyRedirect(user) {
     this.user = user;
-    if (this.user.isFirstAcess && this.user.identificador == 'professor') {
-      this.navCtrl.push(ProfessorFirstAcessPage);
-    }
-    if (this.user.isFirstAcess && this.user.identificador == 'aluno') {
-
-      this.navCtrl.push(AlunoFirstAcessPage);
-    }
+    this.navCtrl.push(this.user.isFirstAcess ? FirstAcessPage : ListPage);
     this.loading.dismissLoad();
-
   }
 
   dealError() {
@@ -50,6 +43,5 @@ export class DecidePage implements OnInit {
     this.navCtrl.pop();
     this.loading.dismissLoad();
   }
-
 
 }

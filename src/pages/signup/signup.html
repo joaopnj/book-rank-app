@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar text-center>
     <ion-title>Cadastro de usuario</ion-title>
   </ion-navbar>
 
@@ -29,7 +29,7 @@
   </ion-item>
   <ion-item>
     <ion-label floating>Papel</ion-label>
-    <ion-select [(ngModel)]="user.identificador" interface="action-sheet">
+    <ion-select [(ngModel)]="user.identificador" interface="alert">
       <ion-option value="professor">Professor</ion-option>
       <ion-option value="aluno">Aluno</ion-option>
     </ion-select>

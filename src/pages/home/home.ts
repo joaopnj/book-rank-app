@@ -32,7 +32,7 @@ export class HomePage {
     if (this.user.login && this.user.senha) {
       this.authService.login(this.user).subscribe(
         user => this.loginSucess(user),
-        error => error.status == 400 ? this.userNotFount(error) : this.preventError(error)
+        error => error.status === 400 ? this.userNotFount(error) : this.preventError(error)
       );
     } else {
       this.loading.dismissLoad();

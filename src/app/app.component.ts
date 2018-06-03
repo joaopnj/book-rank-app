@@ -7,8 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SignupPage } from '../pages/signup/signup';
 import { DecidePage } from '../pages/decide/decide';
-import { AlunoFirstAcessPage } from '../pages/aluno-first-acess/aluno-first-acess';
-import { ProfessorFirstAcessPage } from '../pages/professor-first-acess/professor-first-acess';
+import { FirstAcessPage } from '../pages/first-acess/first-acess';
 
 @Component({
   templateUrl: 'app.html'
@@ -32,8 +31,7 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'SignUp', component: SignupPage },
       { title: 'Decide', component: DecidePage },
-      { title: 'AlunoFirstAcess', component: AlunoFirstAcessPage },
-      { title: 'ProfessorFirstAcess', component: ProfessorFirstAcessPage }
+      { title: 'First acess', component: FirstAcessPage}
     ];
   }
 
