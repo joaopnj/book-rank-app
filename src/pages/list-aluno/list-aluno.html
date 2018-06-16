@@ -1,12 +1,26 @@
 <ion-header>
 
-  <ion-navbar text-center>
-    <ion-title>Lista Aluno</ion-title>
+  <ion-navbar text-center hideBackButton>
+    <ion-title>Lista de livros para disciplinas cursadas por {{user?.nome}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-title text-center *ngIf='books?.length === 0'> Nenhum livro localizado para as disciplinas cursadas, aguarde a indicação do professor.</ion-title>
+  <ion-list>
+      <button ion-item *ngFor="let book of books" (click)="bookrank(book)">
+        <ion-icon name="book" item-start></ion-icon>
+        <div class="item-note" item-start>
+          {{book.nome}}
+        </div>
+        <div class="item-note" item-end>
+          {{book.disciplina}}
+        </div>
+        <div class="item-note" item-end>
+            {{book.media}}
+          </div>
+      </button>
+    </ion-list>
 </ion-content>

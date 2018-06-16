@@ -21,6 +21,11 @@ import { DecidePage } from '../pages/decide/decide';
 import { FirstAcessPage} from '../pages/first-acess/first-acess'
 import { DisciplinaServiceProvider } from '../providers/disciplina-service/disciplina-service';
 import { LivroServiceProvider } from '../providers/livro-service/livro-service';
+import { BookServiceProvider } from '../providers/book-service/book-service';
+import { RankServiceProvider } from '../providers/rank-service/rank-service';
+import { ListProfessorPage } from '../pages/list-professor/list-professor';
+import { ListAlunoPage } from '../pages/list-aluno/list-aluno';
+import { BookRankPage } from '../pages/book-rank/book-rank';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,10 @@ import { LivroServiceProvider } from '../providers/livro-service/livro-service';
     SignupPage,
     ListPage,
     DecidePage,
-    FirstAcessPage
+    FirstAcessPage,
+    ListAlunoPage,
+    ListProfessorPage,
+    BookRankPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,10 @@ import { LivroServiceProvider } from '../providers/livro-service/livro-service';
     SignupPage,
     ListPage,
     DecidePage,
-    FirstAcessPage
+    FirstAcessPage,
+    ListAlunoPage,
+    ListProfessorPage,
+    BookRankPage
   ],
   providers: [
     StatusBar,
@@ -56,7 +67,9 @@ import { LivroServiceProvider } from '../providers/livro-service/livro-service';
     AlertProvider,
     ToastProvider,
     DisciplinaServiceProvider,
-    LivroServiceProvider
+    LivroServiceProvider,
+    BookServiceProvider,
+    RankServiceProvider
   ]
 })
 export class AppModule {}

@@ -1,9 +1,9 @@
 import { User } from "./user";
 
-export class Disciplina {
-    nome: 		string;
-	professor:  User;
-    curso:		string;
+
+export class DisciplinaAlunoObject {
+    disciplina: 		string;
+	aluno:              User;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);        

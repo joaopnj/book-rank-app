@@ -6,7 +6,8 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { DisciplinaServiceProvider } from '../../providers/disciplina-service/disciplina-service';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { ToastProvider } from '../../providers/toast/toast';
-import { ListPage } from '../list/list';
+import { ListProfessorPage } from '../list-professor/list-professor';
+import { ListAlunoPage } from '../list-aluno/list-aluno';
 
 @IonicPage()
 @Component({
@@ -43,11 +44,23 @@ export class FirstAcessPage {
   }
 
   protected save() {
-    this.loading.presentLoadCresent('Salvando as disciplinas do usuário' +this.user.nome+ '..');
-    this.disciplinaService.save(this.user, this.selectedDisciplinas).subscribe(
+    this.loading.presentLoadCresent('Associando as disciplinas do usuário' +this.user.nome+ '..');
+    // this.user.identificador === 'professor' ? this.saveProfessor() : this.saveAluno();
+    this.saveAluno();
+  }
+
+  // private saveProfessor() {
+  //   this.disciplinaService.saveProfessor(this.user, this.selectedDisciplinas).subscribe(
+  //     disciplinas => this.sucessSaveDisciplines(),
+  //     error => this.dealErrorSave()
+  //   );
+  // }
+
+  private saveAluno() {
+    this.disciplinaService.saveAluno(this.user, this.selectedDisciplinas).subscribe(
       disciplina_aluno => this.sucessSaveDisciplines(),
       error => this.dealErrorSave()
-    )
+    );
   }
 
   private getUserContext() {
@@ -70,13 +83,13 @@ export class FirstAcessPage {
 
   private sucessSaveDisciplines() {
     this.userService.removeFirstAcess(this.user).subscribe(
-      aluno => this.sucessSaveAluno(),
+      aluno => this.sucessSave(),
       error => this.dealErrorSave()
     );
   }
 
-  private sucessSaveAluno() {
-    this.navCtrl.push(ListPage);
+  private sucessSave() {
+    this.user.identificador === 'professor' ? this.navCtrl.push(ListProfessorPage) : this.navCtrl.push(ListAlunoPage);
     this.loading.dismissLoad();
   }
 
