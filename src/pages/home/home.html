@@ -7,31 +7,31 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="background">
   <div class="row">
     <div class="col">
-      <ion-item>
-        <ion-label floating>Login</ion-label>
+      <ion-item class="item item-trns text-center">
+        <ion-label floating color="dark">Login</ion-label>
         <ion-input type="text" [(ngModel)]="user.login" name="login"></ion-input>
       </ion-item>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <ion-item>
-        <ion-label floating>Password</ion-label>
+      <ion-item class="item item-trns text-center">
+        <ion-label floating color="dark">Password</ion-label>
         <ion-input type="password" [(ngModel)]="user.senha" name="login"></ion-input>
       </ion-item>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <button ion-button block fixed color="light" (click)="login()">Login</button>
+      <button ion-button block fixed color="dark" (click)="login()">Login</button>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <button ion-button block fixed color="light" (click)="pushSignUpPage()">Cadastrar</button>
+      <button ion-button block fixed color="dark" (click)="pushSignUpPage()">Cadastrar</button>
     </div>
   </div>
 </ion-content>

@@ -3,16 +3,10 @@ import { Injectable } from '@angular/core';
 import { Book } from '../../models/book';
 import { Observable } from 'rxjs';
 import { Headers, RequestOptions } from '@angular/http';
+import { BaseServiceProvider} from '../base-service/base-service';
 
 @Injectable()
-export class BookServiceProvider {
-
-  private apiUrl: string = 'http://localhost:3000';
-  headers: Headers = new Headers();
-  options = new RequestOptions({ headers: this.headers });
-
-  constructor(public httpClient: HttpClient) {
-  }
+export class BookServiceProvider extends BaseServiceProvider {
 
   public listByDiscipline(disciplina: string): Observable<Book[]> {
     let params = new HttpParams();

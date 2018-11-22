@@ -7,28 +7,28 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label floating>Digite o nome</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Digite o nome</ion-label>
     <ion-input type="text" [(ngModel)]="user.nome" name="login" required></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Digite o Login</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Digite o Login</ion-label>
     <ion-input type="text" [(ngModel)]="user.login" name="login" required></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Repita o Login</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Repita o Login</ion-label>
     <ion-input type="text" [(ngModel)]="repeatedUsername" name="login" required></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Digite o password</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Digite o password</ion-label>
     <ion-input type="password" [(ngModel)]="user.senha" name="login" required></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Repita o password</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Repita o password</ion-label>
     <ion-input type="password" [(ngModel)]="repeatedPassword" name="login" required></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Papel</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Papel</ion-label>
     <ion-select [(ngModel)]="user.identificador" interface="alert">
       <ion-option value="professor">Professor</ion-option>
       <ion-option value="aluno">Aluno</ion-option>
@@ -37,12 +37,12 @@
 
   <div class="row">
     <div class="col">
-      <button ion-button block fixed color="light" (click)="cadastrar()">Cadastrar</button>
+      <button ion-button block fixed color="dark" (click)="cadastrar()">Cadastrar</button>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <button ion-button block fixed color="light" (click)="goBackPage()">Voltar</button>
+      <button ion-button block fixed color="dark" (click)="goBackPage()">Voltar</button>
     </div>
   </div>
 

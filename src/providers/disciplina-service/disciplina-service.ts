@@ -6,16 +6,10 @@ import { Observable } from 'rxjs';
 import { User } from '../../models/user';
 import { DisciplinaAluno } from '../../models/disciplina-aluno';
 import { DisciplinaAlunoObject } from '../../models/disciplina-aluno-obj';
+import { BaseServiceProvider } from '../base-service/base-service';
 
 @Injectable()
-export class DisciplinaServiceProvider {
-
-  private apiUrl: string = 'http://localhost:3000';
-  headers: Headers = new Headers();
-  options = new RequestOptions({ headers: this.headers });
-
-  constructor(public httpClient: HttpClient) {
-  }
+export class DisciplinaServiceProvider extends BaseServiceProvider{
 
   public listByCourse(curso: string): Observable<Disciplina[]> {
     let params = new HttpParams();
@@ -37,8 +31,8 @@ export class DisciplinaServiceProvider {
       return new DisciplinaAluno(response);
     }) .catch((error) => {
 
-    error.status % 500 == 0 ? console.log(error.statusText) : ""; 
-    
+    error.status % 500 == 0 ? console.log(error.statusText) : "";
+
     return Observable.throw(error.statusText);
     });
   }
@@ -51,8 +45,8 @@ export class DisciplinaServiceProvider {
       return new Disciplina(response);
     }) .catch((error) => {
 
-    error.status % 500 == 0 ? console.log(error.statusText) : ""; 
-    
+    error.status % 500 == 0 ? console.log(error.statusText) : "";
+
     return Observable.throw(error.statusText);
     });
   }

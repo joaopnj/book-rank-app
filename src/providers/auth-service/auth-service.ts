@@ -5,24 +5,18 @@ import { Observable } from 'rxjs';
 import { User } from '../../models/user';
 // import { Disciplina } from '../../models/disciplina';
 import 'rxjs/Rx';
+import { BaseServiceProvider } from '../base-service/base-service';
 
 @Injectable()
-export class AuthServiceProvider {
-
-  private apiUrl: string = 'http://localhost:3000';
-  headers: Headers = new Headers();
-  options = new RequestOptions({ headers: this.headers });
-
-  constructor(public httpClient: HttpClient) {
-  }
+export class AuthServiceProvider extends BaseServiceProvider{
 
   public login(user: User): Observable<User> {
     return this.httpClient.post(this.apiUrl + '/login', user).map(response => {
         return new User(response);
       }) .catch((error) => {
 
-      error.status % 500 == 0 ? console.log(error.statusText) : ""; 
-      
+      error.status % 500 == 0 ? console.log(error.statusText) : "";
+
       return Observable.throw(error.statusText);
       });
   }
@@ -32,8 +26,8 @@ export class AuthServiceProvider {
         return new User(response);
       }) .catch((error) => {
 
-      error.status % 500 == 0 ? console.log(error.statusText) : ""; 
-      
+      error.status % 500 == 0 ? console.log(error.statusText) : "";
+
       return Observable.throw(error.statusText);
       });
   }
@@ -43,8 +37,8 @@ export class AuthServiceProvider {
         return new User(response);
       }) .catch((error) => {
 
-      error.status % 500 == 0 ? console.log(error.statusText) : "";    
-      
+      error.status % 500 == 0 ? console.log(error.statusText) : "";
+
       return Observable.throw(error.statusText);
       });
   }
@@ -56,8 +50,8 @@ export class AuthServiceProvider {
         return new User(response);
       }) .catch((error) => {
 
-      error.status % 500 == 0 ? console.log(error.statusText) : ""; 
-      
+      error.status % 500 == 0 ? console.log(error.statusText) : "";
+
       return Observable.throw(error.statusText);
       });
   }

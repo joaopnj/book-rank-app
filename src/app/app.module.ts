@@ -26,6 +26,7 @@ import { RankServiceProvider } from '../providers/rank-service/rank-service';
 import { ListProfessorPage } from '../pages/list-professor/list-professor';
 import { ListAlunoPage } from '../pages/list-aluno/list-aluno';
 import { BookRankPage } from '../pages/book-rank/book-rank';
+import { BaseServiceProvider } from '../providers/base-service/base-service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { BookRankPage } from '../pages/book-rank/book-rank';
     DisciplinaServiceProvider,
     LivroServiceProvider,
     BookServiceProvider,
-    RankServiceProvider
+    RankServiceProvider,
+    BaseServiceProvider
   ]
 })
 export class AppModule {}

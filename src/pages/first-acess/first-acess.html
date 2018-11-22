@@ -7,38 +7,45 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label capitalize floating >{{user.identificador}}</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label capitalize floating color="dark" >{{user.identificador}}</ion-label>
     <ion-input type="text" disabled [(ngModel)]="user.nome"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Papel</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Papel</ion-label>
     <ion-select disabled [(ngModel)]="user.identificador" interface="action-sheet">
       <ion-option value="professor">Professor</ion-option>
       <ion-option value="aluno">Aluno</ion-option>
     </ion-select>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Curso</ion-label>
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Curso</ion-label>
     <ion-select [(ngModel)]="curso" interface="alert" (ionChange)="onSelectedCurso()" required>
       <ion-option>Sistemas de Informação</ion-option>
     </ion-select>
   </ion-item>
-  <ion-item>
-    <ion-label floating>Disciplinas</ion-label>
-    <ion-select [(ngModel)]="selectedDisciplinas" 
+  <ion-item class="item item-trns text-center">
+    <ion-label floating color="dark">Disciplinas</ion-label>
+    <ion-select [(ngModel)]="selectedDisciplinas"
     [disabled]="curso" interface="alert" multiple>
         <ion-option *ngFor="let disciplina of disciplinaList"> {{disciplina.nome}} </ion-option>
     </ion-select>
   </ion-item>
   <div class="row">
     <div class="col">
-      <button ion-button block fixed color="light" (click)="save()">Cadastrar</button>
+      <button ion-button block fixed color="dark" (click)="save()">Cadastrar</button>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <button ion-button block fixed color="light" (click)="goBack()">Voltar</button>
+      <button ion-button block fixed color="dark" (click)="goBack()">Voltar</button>
     </div>
   </div>
 </ion-content>
+
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-label class="center-text">Developed by João Jardim</ion-label>
+    </ion-toolbar>
+  </ion-footer>

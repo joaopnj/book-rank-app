@@ -3,16 +3,10 @@ import { Injectable } from '@angular/core';
 import { RequestOptions, Headers } from '@angular/http';
 import { Livro } from '../../models/livro';
 import { Observable } from 'rxjs';
+import { BaseServiceProvider } from '../base-service/base-service';
 
 @Injectable()
-export class LivroServiceProvider {
-  
-  private apiUrl: string = 'http://localhost:3000';
-  headers: Headers = new Headers();
-  options = new RequestOptions({ headers: this.headers });
-
-  constructor(public httpClient: HttpClient) {
-  }
+export class LivroServiceProvider extends BaseServiceProvider{
 
   listByDisciplina(dicisplina: string): Observable<Livro[]> {
     let params = new HttpParams();

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BookServiceProvider } from '../../providers/book-service/book-service';
 import { Book } from '../../models/book';
@@ -34,18 +34,18 @@ export class BookRankPage{
 
   private getBook() {
     this.loading.presentLoadCresent("Carregando dados...");
-    this.bookService.findLivroByName(this.bookName).subscribe( 
+    this.bookService.findLivroByName(this.bookName).subscribe(
       book  => this.dealBookResponse(book),
       error => this.dealBookError(),
       () => this.getUserContext()
-    ); 
+    );
   }
 
   protected qualificar() {
     this.loading.presentLoadCresent("Salvando qualificação");
     this.rank.book = this.book;
     this.rank.aluno = this.user;
-    this.rankService.createRank(this.rank).subscribe( 
+    this.rankService.createRank(this.rank).subscribe(
       rank => this.dealRankResponse(),
       error => this.dealBookError()
     );
@@ -82,5 +82,5 @@ export class BookRankPage{
     this.toast.presentErrorToast("Error","Erro ao carregar dados!");
     this.loading.dismissLoad();
   }
-  
+
 }
