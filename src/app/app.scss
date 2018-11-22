@@ -21,3 +21,7 @@ $toast-wp-background:(#32db64);
 .capitalize {
     text-transform: capitalize;
  }
+
+ .center-text {
+  text-align: $toolbar-ios-title-text-align;
+}

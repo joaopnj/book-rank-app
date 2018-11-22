@@ -1,33 +1,52 @@
 <ion-header>
-
   <ion-navbar text-center hideBackButton>
-    <ion-title>Lista de livros para disciplinas cursadas por {{user?.nome}}</ion-title>
+    <ion-title>Lista de livros para disciplinas cursadas por {{ user?.nome }}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-  <ion-title text-center *ngIf='books?.length === 0'> Nenhum livro localizado para as disciplinas cursadas, aguarde a indicação do professor.</ion-title>
-  <ion-list>
-      <button ion-item *ngFor="let book of books" (click)="bookrank(book)">
-        <ion-icon name="book" item-start></ion-icon>
-        <div class="item-note" item-start>
-          {{book.nome}}
+  <ion-title text-center *ngIf="books?.length === 0">
+    Nenhum livro localizado para as disciplinas cursadas, aguarde a indicação do professor.</ion-title
+  >
+
+  <ion-list class="item item-trns text-center">
+    <button ion-item disabled class="center-text">Livro e seu rank</button>
+    <button ion-item *ngFor="let book of books" (click)="bookrank(book)">
+      <ion-icon name="book" color="" item-start></ion-icon>
+      <div class="item-note" item>{{ book.nome }}</div>
+      <div *ngIf="book.media === 1" class="item-note" item>
+        <ion-icon name="star" color="bright"></ion-icon>
+      </div>
+      <div *ngIf="book.media > 1 && book.media < 2" class="item-note" item>
+          <ion-icon name="star" color="bright"></ion-icon>
+          <ion-icon name="star-half" color="yellow"></ion-icon>
         </div>
-        <div class="item-note" item-end>
-          {{book.disciplina}}
-        </div>
-        <div class="item-note" item-end>
-            {{book.media}}
-          </div>
-      </button>
-    </ion-list>
+      <div *ngIf="book.media === 2" class="item-note" item>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+      </div>
+      <div *ngIf="book.media === 3" class="item-note" item>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+      </div>
+      <div *ngIf="book.media === 4" class="item-note" item>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+      </div>
+      <div *ngIf="book.media === 5" class="item-note" item>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+        <ion-icon name="star" color="bright"></ion-icon>
+      </div>
+    </button>
+  </ion-list>
 </ion-content>
 
-
 <ion-footer>
-    <ion-toolbar>
-      <ion-label class="center-text">Developed by João Jardim</ion-label>
-    </ion-toolbar>
-  </ion-footer>
+  <ion-toolbar> <ion-label class="center-text">Developed by João Jardim</ion-label> </ion-toolbar>
+</ion-footer>
